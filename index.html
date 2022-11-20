@@ -1,41 +1,109 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="theme-color" content="#fafafa">
+  </head>
 
-  <meta name="theme-color" content="#fafafa">
-</head>
+  <body>
 
-<body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">Portfolio</h1>
+        <h2 class="site-sub-title">Desgin System</h2>
+      </div>
+    </header>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
+    <main class="main">
+      <div class="container">
+        <section class="section">
+          <h2 class="section-title">Color</h2>
+          <div class="grid colors">
+            <div class="color-item">
+              <div class="color-box bg-black border-gray"></div>
+              <p class="color">rgb <span class="rgb">21, 21, 21</span></p>
+            </div>
+            <div class="color-item">
+              <div class="color-box bg-green border-green"></div>
+              <p class="color">rgb <span class="rgb">78, 225, 160</span></p>
+            </div>
+            <div class="color-item">
+              <div class="color-box bg-dark-gray border-dark-gray"></div>
+              <p class="color">rgb <span class="rgb">36, 36, 36</span></p>
+            </div>
+            <div class="color-item">
+              <div class="color-box bg-gray border-gray"></div>
+              <p class="color">rgb <span class="rgb">217, 217, 217</span></p>
+            </div>
+            <div class="color-item">
+              <div class="color-box bg-white border-white"></div>
+              <p class="color">rgb <span class="rgb">255, 255, 255</span></p>
+            </div>
+            <div class="color-item">
+              <div class="color-box bg-red border-red"></div>
+              <p class="color">rgb <span class="rgb">255, 11, 91</span></p>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Typography</h2>
+          <div class="grid grid-2">
+            <div class="typography-item">
+              <p class="font-styles">Space Grotesk Bold 88px 88px Line -2.5px Char. Spacing</p>
+              <p class="heading heading-xl">Heading (XL)</p>
+              <p class="font-styles">Space Grotesk Bold 48px 56px Line -1.5px Char. Spacing</p>
+              <p class="heading heading-l">Heading (L)</p>
+              <p class="font-styles">Space Grotesk Bold 24px 32px Line</p>
+              <p class="heading heading-m">Heading (M)</p>
+            </div>
+            <div class="typography-item">
+              <p class="font-styles">Space Grotesk Medium 18px 28px Line</p>
+              <p class="typograph">This is Body (L). Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                odio. Quisque volutpat mattis eros. Nullam malesuada erat.</p>
+              <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.
+                Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum
+                hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat.</p>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Interactive Elements</h2>
+          <div class="grid grid-2">
+            <div class="grid element-box">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem accusantium velit perferendis,
+                dicta atque aliquam fugiat cumque consectetur tempore mollitia numquam. Sequi aspernatur libero quia
+                quod sint quo nulla optio!</p>
+            </div>
+            <div class="grid element-box">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem accusantium velit perferendis,
+                dicta atque aliquam fugiat cumque consectetur tempore mollitia numquam. Sequi aspernatur libero quia
+                quod sint quo nulla optio!</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+      <script>
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+      </script>
+      <script src="https://www.google-analytics.com/analytics.js" async></script>
+  </body>
 
 </html>

@@ -180,9 +180,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -193,6 +193,7 @@ textarea {
    ========================================================================== */
 
 @media print {
+
   *,
   *::before,
   *::after {
@@ -261,3 +262,254 @@ textarea {
   }
 }
 
+/* Custom Styles */
+:root {
+  --color-black: #000000;
+  --color-green: #4EE1A0;
+  --color-dark-gray: #242424;
+  --color-gray: #d9d9d9;
+  --color-white: #FFFFFF;
+  --color-red: #FF6F5B;
+  /* Fonts */
+  --font-grotesk-medium: 'Space Grotesk', sans-serif;
+  --font-grotesk-bold: 'Space Grotesk', sans-serif;
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+@font-face {
+  font-family: var(--font-grotesk-medium);
+  src: url('../fonts/SpaceGrotesk-Medium.ttf') format('ttf');
+  font-weight: var(--font-weight-medium);
+}
+
+@font-face {
+  font-family: var(--font-grotesk-bold);
+  src: url('../fonts/SpaceGrotesk-Bold.ttf') format('ttf');
+  font-weight: var(--font-weight-bold);
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-grotesk-medium);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Background Colors */
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.bg-green {
+  background-color: var(--color-green);
+}
+
+.bg-dark-gray {
+  background-color: var(--color-dark-gray);
+}
+
+.bg-gray {
+  background-color: var(--color-gray);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.bg-red {
+  background-color: var(--color-red);
+}
+
+/* Text Colors */
+.text-black {
+  color: var(--color-black);
+}
+
+.text-green {
+  color: var(--color-green);
+}
+
+.text-dark-gray {
+  color: var(--color-dark-gray);
+}
+
+.text-gray {
+  color: var(--color-gray);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.text-red {
+  color: var(--color-red);
+}
+
+/* Borders */
+.border-black {
+  border-color: var(--color-black);
+}
+
+.border-green {
+  border-color: var(--color-green);
+}
+
+.border-dark-gray {
+  border-color: var(--color-dark-gray);
+}
+
+.border-gray {
+  border-color: var(--color-gray);
+}
+
+.border-white {
+  border-color: var(--color-white);
+}
+
+.border-red {
+  border-color: var(--color-red);
+}
+
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.color-box {
+  border-width: 1px;
+  border-style: solid;
+  height: 120px;
+}
+
+.color-item {
+  border: 1px solid transparent;
+}
+
+.color {
+  color: var(--color-gray);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.rgb {
+  color: var(--color-white);
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  line-height: 56px;
+  margin-bottom: 3rem;
+}
+
+.heading {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+.font-styles {
+  color: var(--color-gray);
+}
+
+.element-box {
+  background-color: var(--color-dark-gray);
+  height: 400px;
+  padding: 2rem;
+  place-content: center;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .heading-xl {
+    font-size: 88px;
+    line-height: 88px;
+    letter-spacing: -2.5px;
+  }
+
+  .heading-l {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -1.5px;
+  }
+
+  .heading-m {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 1024px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1366px) {}
