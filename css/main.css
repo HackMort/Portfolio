@@ -271,7 +271,10 @@ textarea {
   --color-white: #FFFFFF;
   --color-red: #FF6F5B;
   /* Fonts */
+  --font-grotesk-light: 'Space Grotesk', sans-serif;
+  --font-grotesk-regular: 'Space Grotesk', sans-serif;
   --font-grotesk-medium: 'Space Grotesk', sans-serif;
+  --font-grotesk-semi-bold: 'Space Grotesk', sans-serif;
   --font-grotesk-bold: 'Space Grotesk', sans-serif;
   /* Font Weights */
   --font-weight-light: 300;
@@ -285,9 +288,27 @@ textarea {
 }
 
 @font-face {
+  font-family: var(--font-grotesk-light);
+  src: url('../fonts/SpaceGrotesk-Light.ttf') format('ttf');
+  font-weight: var(--font-weight-light);
+}
+
+@font-face {
+  font-family: var(--font-grotesk-regular);
+  src: url('../fonts/SpaceGrotesk-Regular.ttf') format('ttf');
+  font-weight: var(--font-weight-normal);
+}
+
+@font-face {
   font-family: var(--font-grotesk-medium);
   src: url('../fonts/SpaceGrotesk-Medium.ttf') format('ttf');
   font-weight: var(--font-weight-medium);
+}
+
+@font-face {
+  font-family: var(--font-grotesk-semi-bold);
+  src: url('../fonts/SpaceGrotesk-SemiBold.ttf') format('ttf');
+  font-weight: var(--font-weight-semi-bold);
 }
 
 @font-face {
@@ -296,12 +317,26 @@ textarea {
   font-weight: var(--font-weight-bold);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--color-black);
   color: var(--color-white);
   font-family: var(--font-grotesk-medium);
   font-size: 18px;
   line-height: 28px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-weight: var(--font-weight-bold);
 }
 
 /* Background Colors */
@@ -409,16 +444,36 @@ body {
   text-transform: capitalize;
 }
 
+/* Custom Styles */
+
+.site-header {
+  padding: 4rem 0 2rem 0;
+}
+
+
+
+.site-title {
+  margin-top: 0;
+}
+
+.site-title+.site-sub-title {
+  color: var(--color-gray);
+  margin-top: -1rem;
+  margin-bottom: 0;
+  opacity: 0.5;
+}
+
 .container {
   max-width: 1110px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .grid {
   display: grid;
   gap: 3rem;
 }
+
 
 .colors {
   display: grid;
@@ -437,18 +492,20 @@ body {
   border: 1px solid transparent;
 }
 
-.color {
-  color: var(--color-gray);
+.color-values {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 16px;
+  gap: 0.5rem;
   font-weight: 500;
-  line-height: 26px;
   text-transform: uppercase;
 }
 
-.rgb {
+.color {
+  color: var(--color-gray);
+  opacity: 0.5;
+}
+
+.value {
   color: var(--color-white);
 }
 
@@ -457,8 +514,9 @@ body {
 }
 
 .section-title {
+  font-family: var(--font-grotesk-regular);
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 100;
   letter-spacing: -1.5px;
   line-height: 56px;
   margin-bottom: 3rem;
@@ -471,12 +529,16 @@ body {
 
 .font-styles {
   color: var(--color-gray);
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
 }
 
 .element-box {
   background-color: var(--color-dark-gray);
-  height: 400px;
-  padding: 3rem;
+  align-items: center;
+  gap: 1rem;
+  align-content: space-evenly;
+  padding: 1.5rem;
   text-align: center;
 }
 
@@ -484,6 +546,11 @@ body {
   display: block;
   margin-bottom: 2.5rem;
 }
+
+.input-group:last-of-type {
+  margin-bottom: 0;
+}
+
 
 /* all type of inputs */
 input[type="text"],
@@ -493,20 +560,117 @@ textarea {
   background-color: var(--color-dark-gray);
   border: 0;
   border-bottom: 1px solid var(--color-gray);
+  color: var(--color-white);
+  text-transform: uppercase;
   display: block;
   height: 45px;
   padding-right: 1rem;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   width: 100%;
+}
+
+input.active,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 0;
+  border-bottom: 1px solid var(--color-green);
+  transition: all 0.3s ease;
+}
+
+input.error,
+textarea.error {
+  border-bottom-color: var(--color-red);
+}
+
+input~.error-message,
+textarea~.error-message {
+  display: none;
+}
+
+
+input.error~.error-message,
+textarea.error~.error-message {
+  display: inherit;
+}
+
+/* input.error+.error-message,
+textarea.error+.error-message {
+  display: none;
+  border-bottom: 1px solid var(--color-red);
+}
+
+input.error+.error-message,
+textarea.error+.error-message {
+  display: block;
+} */
+
+input.error,
+textarea.error {
+  content: "";
+  background-image: url("../img/error.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.25rem center;
+  background-size: 1rem;
 }
 
 textarea {
   height: auto;
   padding-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+.button {
+  background-color: var(--color-dark-gray);
+  border: 0;
+  border-bottom: 1px solid var(--color-green);
+  color: var(--color-white);
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding-bottom: 10px;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: bold;
+  letter-spacing: 2.29px;
+  margin-bottom: 1rem;
+}
+
+.button.active,
+.button:hover,
+.button:focus,
+.button:visited {
+  color: var(--color-green);
+}
+
+.error-message {
+  font-size: 10px;
+  display: block;
 }
 
 /* Media Queries */
 @media (min-width: 768px) {
+
+  .site-header.design::after {
+    content: '';
+    display: block;
+    background-image: url(../img/pattern-rings.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 129px;
+    position: absolute;
+    right: -300px;
+    top: 2rem;
+    z-index: 2;
+    width: 530px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
   .grid-2 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -535,6 +699,10 @@ textarea {
     font-size: 24px;
     line-height: 32px;
   }
+
+  .element-box {
+    padding: 3rem;
+  }
 }
 
 @media (min-width: 1024px) {}
@@ -542,3 +710,15 @@ textarea {
 @media (min-width: 1200px) {}
 
 @media (min-width: 1366px) {}
+
+@media (min-width: 1500px) {
+  .site-header.design::after {
+    width: 750px;
+  }
+}
+
+@media (min-width: 1650px) {}
+
+@media (min-width: 1800px) {}
+
+@media (min-width: 1920px) {}
